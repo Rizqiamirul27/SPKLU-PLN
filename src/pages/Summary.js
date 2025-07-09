@@ -50,26 +50,26 @@ function Summary() {
           <Button variant="contained" color="info" startIcon={<FilterListIcon />} sx={{ borderRadius: 2 }}>Filter</Button>
         </Box>
         <Box sx={{ width: '100%', overflowX: 'auto', mb: 3 }}>
-          <Box sx={{ display: 'flex', gap: 3, minWidth: 1100 }}>
+          <Box sx={{ display: 'flex', gap: 2, minWidth: 800 }}>
             {stats.map((s, i) => (
               <Paper key={s.label} sx={{
-                p: 3,
+                p: 2,
                 borderRadius: 3,
                 background: s.bg,
                 color: s.textColor,
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: 130,
-                minWidth: 340,
-                width: 340,
+                minHeight: 90,
+                minWidth: 220,
+                width: 220,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 boxShadow: '0 2px 12px #1976d210',
               }}>
-                <Box sx={{ position: 'absolute', right: -30, top: -20, width: 120, height: 120, bgcolor: s.color, opacity: 0.18, borderRadius: '50%' }} />
-                <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>{s.label}</Typography>
-                <Typography variant="h3" sx={{ fontWeight: 'bold', mt: 1 }}>{s.value}</Typography>
+                <Box sx={{ position: 'absolute', right: -20, top: -10, width: 70, height: 70, bgcolor: s.color, opacity: 0.13, borderRadius: '50%' }} />
+                <Typography variant="subtitle1" sx={{ fontWeight: 500, fontSize: 16 }}>{s.label}</Typography>
+                <Typography variant="h4" sx={{ fontWeight: 'bold', mt: 1, fontSize: 32 }}>{s.value}</Typography>
               </Paper>
             ))}
           </Box>
@@ -113,23 +113,19 @@ function Summary() {
           </Paper>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Box sx={{ display: 'flex', gap: 2, height: '100%' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
             {status.map((s, i) => (
-              <Paper key={s.label} sx={{ p: 2, borderRadius: 2, flex: 1, background: s.color, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: 0 }}>
-                <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>{s.label}</Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 1, width: '100%' }}>
-                  <Box sx={{ textAlign: 'center', flex: 1 }}>
-                    <Typography variant="caption" sx={{ color: '#7a7a7a' }}>SPKLU</Typography>
-                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.spklu}</Typography>
-                  </Box>
-                  <Box sx={{ textAlign: 'center', flex: 1 }}>
-                    <Typography variant="caption" sx={{ color: '#7a7a7a' }}>Charger</Typography>
-                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.charger}</Typography>
-                  </Box>
-                  <Box sx={{ textAlign: 'center', flex: 1 }}>
-                    <Typography variant="caption" sx={{ color: '#7a7a7a' }}>Connector</Typography>
-                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.connector}</Typography>
-                  </Box>
+              <Paper key={s.label} sx={{ p: 2, borderRadius: 2, background: s.color, display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 0 }}>
+                <Typography variant="subtitle1" sx={{ fontWeight: 600, fontSize: 22, mb: 1 }}>{s.label}</Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', mb: 1 }}>
+                  <Typography variant="body1" sx={{ color: '#7a7a7a', mr: 1 }}>SPKLU</Typography>
+                  <Typography variant="body1" sx={{ color: '#7a7a7a', mr: 1 }}>Charger</Typography>
+                  <Typography variant="body1" sx={{ color: '#7a7a7a' }}>Connector</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                  <Typography variant="h5" sx={{ fontWeight: 'bold', mr: 2 }}>{s.spklu}</Typography>
+                  <Typography variant="h5" sx={{ fontWeight: 'bold', mr: 2 }}>{s.charger}</Typography>
+                  <Typography variant="h5" sx={{ fontWeight: 'bold' }}>{s.connector}</Typography>
                 </Box>
               </Paper>
             ))}
