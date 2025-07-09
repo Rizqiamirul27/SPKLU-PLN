@@ -46,13 +46,6 @@ function ReportSPKLUR4DetailTransaksi() {
 
   return (
     <Box sx={{ background: '#eaf3ff', minHeight: '100vh', p: 3 }}>
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', mb: 2 }}>
-        <Avatar alt="Rizqiamirul" src="/profile-rizqi.jpg">R</Avatar>
-        <Box sx={{ ml: 1 }}>
-          <Typography variant="body1" sx={{ fontWeight: 'bold' }}>Rizqiamirul</Typography>
-          <Typography variant="caption" color="text.secondary">Telkom University</Typography>
-        </Box>
-      </Box>
       <Typography variant="h5" sx={{ mb: 2, fontWeight: 'bold' }}>Report</Typography>
       <Typography variant="subtitle1" sx={{ mb: 3 }}>Detail Transaksi</Typography>
       <Box sx={{ width: '100%', left: 0, right: 0, zIndex: 2, mb: 2 }}>

@@ -96,7 +96,7 @@ function Summary() {
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2, borderRadius: 2, mb: 2 }}>
+          <Paper sx={{ p: 2, borderRadius: 2, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>Transaksi Hari Ini</Typography>
             {transaksi.map((t, i) => (
               <Box key={t.label} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
@@ -113,29 +113,27 @@ function Summary() {
           </Paper>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Grid container spacing={2}>
+          <Box sx={{ display: 'flex', gap: 2, height: '100%' }}>
             {status.map((s, i) => (
-              <Grid item xs={12} md={4} key={s.label}>
-                <Paper sx={{ p: 2, borderRadius: 2, mb: 2, background: s.color }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>{s.label}</Typography>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 1 }}>
-                    <Box>
-                      <Typography variant="caption" sx={{ color: '#7a7a7a' }}>SPKLU</Typography>
-                      <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.spklu}</Typography>
-                    </Box>
-                    <Box>
-                      <Typography variant="caption" sx={{ color: '#7a7a7a' }}>Charger</Typography>
-                      <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.charger}</Typography>
-                    </Box>
-                    <Box>
-                      <Typography variant="caption" sx={{ color: '#7a7a7a' }}>Connector</Typography>
-                      <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.connector}</Typography>
-                    </Box>
+              <Paper key={s.label} sx={{ p: 2, borderRadius: 2, flex: 1, background: s.color, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: 0 }}>
+                <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>{s.label}</Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 1, width: '100%' }}>
+                  <Box sx={{ textAlign: 'center', flex: 1 }}>
+                    <Typography variant="caption" sx={{ color: '#7a7a7a' }}>SPKLU</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.spklu}</Typography>
                   </Box>
-                </Paper>
-              </Grid>
+                  <Box sx={{ textAlign: 'center', flex: 1 }}>
+                    <Typography variant="caption" sx={{ color: '#7a7a7a' }}>Charger</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.charger}</Typography>
+                  </Box>
+                  <Box sx={{ textAlign: 'center', flex: 1 }}>
+                    <Typography variant="caption" sx={{ color: '#7a7a7a' }}>Connector</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{s.connector}</Typography>
+                  </Box>
+                </Box>
+              </Paper>
             ))}
-          </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Box>
